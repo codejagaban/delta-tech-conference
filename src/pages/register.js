@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Layout from '../components/layout';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
 
 const Register = () => {
 
@@ -13,6 +15,22 @@ const Register = () => {
 
     });
     const { fullName, email, phoneNumber, variousTrack, messageForOrganizer } = state;
+
+    const animatedComponents = makeAnimated();
+    const options = [
+      { value: 'Future of work', label: 'Future of work' },
+      { value: 'Robotics', label: 'Robotics' },
+      { value: 'Blockchain Technology', label: 'Blockchain Technology' },
+      { value: 'IoT/Big Data', label: 'IoT/Big Data' },
+      { value: 'Artificial Intelligence/Machine Learning', label: 'Artificial Intelligence/Machine Learning' },
+      { value: 'Tech-&-Government', label: 'Tech-&-Government' },
+      { value: 'Kids Zone', label: 'Kids Zone' },
+      { value: 'Robotics', label: 'Robotics' },
+      { value: 'Women In Tech', label: 'Women In Tech' },
+      { value: 'Developers/Designers', label: 'Developers/Designers' },
+      { value: 'Tech and Creatives', label: 'Tech and Creatives' },
+    ]
+
 
     const onInputChange = e =>  {
         const name = e.target.name;
@@ -72,13 +90,19 @@ const Register = () => {
 
   <Form.Group controlId="Track">
     <Form.Label>Choose A Track</Form.Label>
-    <Form.Control as="select">
-      <option value="Startups">Startups</option>
-      <option value="Women In Tech">Women In Tech</option>
-      <option value="Developer/Designer">Developer/Designer</option>
-      <option value="Data science/AI/ML">Data science/AI/ML</option>
-      <option value="Creatives">Creatives</option>
-    </Form.Control>
+
+    <Select 
+    components={makeAnimated}
+    isMulti
+    options={
+      this.state.values.length >= 2 ? 
+        this.state.values : 
+        selectOptions
+    }
+    
+    options={options} />
+
+
   </Form.Group>
 
   <Form.Group controlId="formMessage">

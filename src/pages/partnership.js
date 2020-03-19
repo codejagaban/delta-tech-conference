@@ -26,6 +26,7 @@ const Partners = () => {
     }
     return (
         <>
+        <SEO title="Partnership "/>
         <Layout >
 
            <section className="partners">

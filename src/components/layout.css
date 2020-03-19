@@ -26,7 +26,7 @@ body {
 }
 .container {
   margin: 0 auto;
-  max-width: 1500px;
+  max-width: 1300px;
   padding: 0 20px;  
   width: 100%;
 }
@@ -46,7 +46,7 @@ section {
   
 }
 .header h1 {
-  font-size: 70px
+  /* SDSEWWQEEEE */
 
 }
 .header p {
@@ -111,15 +111,31 @@ section {
   padding: 2px !important;
 }
 .speaker__desc {
-  top: -50%;
-  margin-top: -110px;
   background-color: rgba(40, 167, 70, 0.349);
   padding: 10px;
-  z-index: 9999;
+top:  83.3%;
+color: #fff;
+position: absolute;
+z-index: 999;
+
 }
 .speaker__work {
   font-weight: 600;
 }
+
+
+.speaker-small__desc {
+  background-color: rgba(40, 167, 70, 0.349);
+  padding: 10px;
+top:  67%;
+color: #fff;
+position: absolute;
+z-index: 999;
+
+}
+
+
+
 
 :root {
   --marquee-width: 100%;
@@ -351,4 +367,9 @@ border-color: #ebedf2;
     border-color: #716aca;
   outline: 0;
   box-shadow: none;
+}
+
+.copy {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
 }

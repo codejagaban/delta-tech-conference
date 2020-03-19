@@ -36,7 +36,7 @@ for(let i=0; i<marqueeElementsDisplayed; i++) {
 
   const data = useStaticQuery(graphql`
   query {
-    speaker1: file(relativePath: { eq: "speaker.jpg" }) {
+    iyin: file(relativePath: { eq: "Iyin.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
@@ -49,7 +49,22 @@ for(let i=0; i<marqueeElementsDisplayed; i++) {
           ...GatsbyImageSharpFluid
         }
       }
+    },
+    adia: file(relativePath: { eq: "Adia.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    },
+    onajite: file(relativePath: { eq: "Onajite.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
     }
+
 
 
 
@@ -67,17 +82,17 @@ for(let i=0; i<marqueeElementsDisplayed; i++) {
       <div className="header">
       <Row className="">
         <Col md="7">
-  <h1>The <span className="text-success echo"></span> <br/>Tech conference in The Niger Delta  </h1>
 
+<h1 className="text-capitalize">Delta <span className="text-success">entrepreneurship</span> and technology conference</h1>
 
 <Row>
-  <Col md="4 p-0">
+  <Col md="4 ">
   <h6 className="mt-3">  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           <span className="ml-2">August 14th-15th 2020</span> 
      </h6>
   </Col>
 
-  <Col md="6 p-0">
+  <Col md="6 ">
 
   <h6 className="mt-3">
      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -94,8 +109,7 @@ for(let i=0; i<marqueeElementsDisplayed; i++) {
         </Col>
         <Col md="5">
        <div className="p-3">
-
-       <p className="float-left"> " Voluptate Laborum deserunt fugiat irure culpa laboris culpa culpa dolore ipsum Lorem."</p>
+       <h2>The <span className="text-success echo"></span> <br/>Tech conference in The Niger Delta  </h2>
        <Link to="/register" variant="" className=" btn btn-success cta-button mt-5 " size="lg">
     <span className="text-white"> Register Now</span>
     </Link>
@@ -144,13 +158,9 @@ for(let i=0; i<marqueeElementsDisplayed; i++) {
          <Col md="6">
 
            <h1>What is <span className="text-success letters">
-           Delta Tech Conference</span>?</h1>
+           #DetConf</span>?</h1>
 
-           <h1 class="ml6">
-  <span class="text-wrapper">
-    <span class="letters">Beautiful Question<span className="text-success"> !</span></span>
-  </span>
-</h1>
+         
          </Col>
          <Col>
          <p className="desc">We’re a company from Dublin, Ireland, that holds events across the world: Web Summit in Lisbon, Collision in Toronto, and RISE in Hong Kong.
@@ -180,51 +190,50 @@ The New York Times that we assemble “a grand conclave of the tech industry’s
 
    <section className="speakers">
      <Container>
-       <h1>Some keynote speakers for <span className="text-success">2020</span></h1>
+       <h1 className="mb-3">Some keynote speakers for <span className="text-success">2020</span></h1>
 
        <Row>
          <Col md="6" className="speaker">
-          <div className="">
-
-          <Img fluid={data.speaker1.childImageSharp.fluid}/>
+         
+        
+          <Img fluid={data.iyin.childImageSharp.fluid}/>
+        
           <div className="speaker__desc">
             <h2 className="speaker__name">Trust Jamin</h2>
             <p className="speaker__info">Software Developer, <span className="speaker__work">Warri Innovation Hub</span></p>
 
-          </div>
-          
-          </div>
+          </div>  
          
          </Col>
 
          <Col md="6" className="">
            <Row>
              <Col xs="6" md="6" className="speaker">
+           
 
-
-       <Img fluid={data.speaker1.childImageSharp.fluid}/>
-       <div className="speaker__desc">
+       <Img fluid={data.adia.childImageSharp.fluid}/>
+       <div className="speaker-small__desc">
             <h2 className="speaker__name">Trust Jamin</h2>
             <p className="speaker__info">Software Developer, <span className="speaker__work">Warri Innovation Hub</span></p>
 
-          </div>
+          </div>  
              </Col>
              <Col xs="6" md="6" className="speaker">
 
 
-       <Img fluid={data.speaker1.childImageSharp.fluid}/>
-
-             </Col>
-             <Col xs="6" md="6" className="speaker">
-
-
-       <Img fluid={data.speaker1.childImageSharp.fluid}/>
+       <Img fluid={data.onajite.childImageSharp.fluid}/>
 
              </Col>
              <Col xs="6" md="6" className="speaker">
 
 
-       <Img fluid={data.speaker1.childImageSharp.fluid}/>
+       {/* <Img fluid={data.speaker1.childImageSharp.fluid}/> */}
+
+             </Col>
+             <Col xs="6" md="6" className="speaker">
+
+
+       {/* <Img fluid={data.speaker1.childImageSharp.fluid}/> */}
 
              </Col>
            </Row>
@@ -432,48 +441,7 @@ The New York Times that we assemble “a grand conclave of the tech industry’s
       
     </ul>
   </div>
-  <div class="marquee" style={{ width: '100%' }}>
-    <ul class="marquee-content">
-      <li>
-      <Img  style={{ width: '180px' }} fluid={data.wtnLogo.childImageSharp.fluid}/>
-
-      </li>
-      <li>
-      <Img  style={{ width: '180px' }} fluid={data.wtnLogo.childImageSharp.fluid}/>
-      </li>
-
-      <li>
-      <Img  style={{ width: '180px' }} fluid={data.wtnLogo.childImageSharp.fluid}/>
-
-      </li>
-      <li>
-      <Img  style={{ width: '180px' }} fluid={data.wtnLogo.childImageSharp.fluid}/>
-      </li>
-      <li>
-      <Img  style={{ width: '180px' }} fluid={data.wtnLogo.childImageSharp.fluid}/>
-      </li>
-      <li>
-      <Img  style={{ width: '180px' }} fluid={data.wtnLogo.childImageSharp.fluid}/>
-      </li>
-
-
-      <li>
-      <Img  style={{ width: '180px' }} fluid={data.wtnLogo.childImageSharp.fluid}/>
-
-      </li>
-      <li>
-      <Img  style={{ width: '180px' }} fluid={data.wtnLogo.childImageSharp.fluid}/>
-      </li>
-      <li>
-      <Img  style={{ width: '180px' }} fluid={data.wtnLogo.childImageSharp.fluid}/>
-
-      </li>
-      <li>
-      <Img  style={{ width: '180px' }} fluid={data.wtnLogo.childImageSharp.fluid}/>
-      </li>
-      
-    </ul>
-    </div>
+ 
      </Container>
    </section>
   </Layout>

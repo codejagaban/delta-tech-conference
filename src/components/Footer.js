@@ -41,6 +41,14 @@ const Footer = () => {
            </Col>
          
        </Row>
+
+       <Row>
+           <Col md="8" className="mx-auto mt-3 text-center">
+               <hr/>
+            <p className="copy"> 	Copyright &copy; 2020  Warri Innovation Hub</p>
+           </Col>
+
+       </Row>
        </Container>
             
         </footer>
